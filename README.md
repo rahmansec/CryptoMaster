@@ -3,9 +3,6 @@
 
 **CryptoMaster** is a powerful tool for performing various hashing, encoding, and decoding operations. It supports a range of algorithms and encoding methods, making it a versatile addition to any developer's toolkit.
 
-![Logo](https://github.com/rahmansec/CryptoMaster/blob/main/logo.png)
-
-
 ## Features
 
 - **Hashing:**
@@ -44,3 +41,5 @@ encoder= Encode_Class()
 result = encoder.url_encode("hello")
 print(result)
 ```
+![Logo](https://github.com/rahmansec/CryptoMaster/blob/main/logo.png)
+
