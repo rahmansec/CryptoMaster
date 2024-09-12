@@ -1,7 +1,7 @@
 from rich.console import Console
 from rich.prompt import Prompt
 from rich.table import Table
-from functions import *
+from Encoder import *
 
 
 console = Console()
