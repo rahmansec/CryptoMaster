@@ -34,12 +34,12 @@ python CryptoMaster.py
 ```
 Use in python:
 ```python
-import Encoder.py
+import Encoder
 
 #example
 encoder= Encode_Class()
 result = encoder.url_encode("hello")
 print(result)
 ```
-![Logo](https://github.com/rahmansec/CryptoMaster/blob/main/logo.png)
+![Logo](https://github.com/rahmansec/CryptoMaster/blob/test/logo.png)
 
