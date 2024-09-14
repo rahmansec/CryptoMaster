@@ -34,7 +34,7 @@ python CryptoMaster.py
 ```
 Use in python:
 ```python
-import Encoder
+import CryptoFunctions
 
 #example
 encoder= Encode_Class()

@@ -1,6 +1,8 @@
 import typer
+
+
 def banner():
-    
+
     banner = """  ____                  _        __  __           _            
  / ___|_ __ _   _ _ __ | |_ ___ |  \/  | __ _ ___| |_ ___ _ __ 
 | |   | '__| | | | '_ \| __/ _ \| |\/| |/ _` / __| __/ _ \ '__|
@@ -9,4 +11,4 @@ def banner():
             |___/|_|                                           
 \n"""
 
-    typer.secho(banner,fg=typer.colors.GREEN)
+    typer.secho(banner, fg=typer.colors.GREEN)

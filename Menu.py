@@ -1,7 +1,7 @@
 from rich.console import Console
 from rich.prompt import Prompt
 from rich.table import Table
-from Encoder import *
+from CryptoFunctions import *
 
 
 console = Console()
@@ -26,12 +26,10 @@ def show_menu():
     table.add_row("8", "SHA-512 Hashing")
     table.add_row("9", "Base64 Encoding")
     table.add_row("10", "URL Encoding")
-    table.add_row("11", "Unicode Encoding")
-    table.add_row("12", "HTML Encoding")
-    table.add_row("13", "Base64 Decoding")
-    table.add_row("14", "URL Decoding")
-    table.add_row("15", "Unicode Decoding")
-    table.add_row("16", "HTML Decoding")
+    table.add_row("11", "HTML Encoding")
+    table.add_row("12", "Base64 Decoding")
+    table.add_row("13", "URL Decoding")
+    table.add_row("14", "HTML Decoding")
     table.add_row("0", "Exit")
 
     console.print(table)
@@ -67,9 +65,6 @@ def process_choice(choice):
     elif choice == "10":
         text = Prompt.ask("Enter text to URL encode")
         result = encoder.url_encode(text)
-    elif choice == "11":
-        text = Prompt.ask("Enter text to Unicode encode")
-        result = encoder.unicode_encode(text)
     elif choice == "12":
         text = Prompt.ask("Enter text to HTML encode")
         result = encoder.html_encode(text)
@@ -79,9 +74,6 @@ def process_choice(choice):
     elif choice == "14":
         text = Prompt.ask("Enter URL encoded text to decode")
         result = decoder.url_decode(text)
-    elif choice == "15":
-        text = Prompt.ask("Enter Unicode encoded bytes (e.g. b'example')")
-        result = decoder.unicode_decode(eval(text))  # Caution: eval should be used carefully
     elif choice == "16":
         text = Prompt.ask("Enter HTML encoded text to decode")
         result = decoder.html_decode(text)

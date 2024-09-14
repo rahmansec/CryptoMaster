@@ -66,10 +66,6 @@ class Encode_Class:
         encoded = urllib.parse.quote(text)
         return encoded
 
-    def unicode_encode(self, text: str):
-        encoded = text.encode("utf-8")
-        return encoded
-
     def html_encode(self,text:str):
         encoded = html.escape(text)
         return encoded
@@ -83,10 +79,6 @@ class Decode_Class():
     def url_decode(self, encoded_text: str):
         decoded = urllib.parse.unquote(encoded_text)
         return decoded        
-    
-    def unicode_decode(self, encoded_text: bytes):
-        decoded = encoded_text.decode("utf-8")
-        return decoded
     
     def html_decode(self, encoded_text: str):
         decoded = html.unescape(encoded_text)
