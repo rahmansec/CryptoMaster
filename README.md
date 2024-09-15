@@ -17,7 +17,6 @@
 - **Encoding / Decoding:**
   - Base64
   - URL
-  - Unicode
   - HTML
 ## Installation
 
