@@ -18,6 +18,8 @@
   - Base64
   - URL
   - HTML
+- **Encrypt / Decrypt:**
+  - AES
 ## Installation
 
 To start working with CryptoMaster, you must first download it and then install the required dependencies. You can do this using "pip" and use this tool
