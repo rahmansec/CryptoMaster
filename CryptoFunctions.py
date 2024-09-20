@@ -4,6 +4,12 @@ from Crypto.Hash import RIPEMD160, MD5, SHA1, SHA224, SHA256, SHA384, SHA512
 import base64
 import urllib
 import html
+from Crypto.Cipher import AES
+from Crypto.Random import get_random_bytes
+from Crypto.Util.Padding import pad, unpad
+from rich.prompt import Prompt
+import typer 
+
 
 class Hashs_Class:
     def md5(self, text: str, salt: str = ""):
@@ -83,3 +89,34 @@ class Decode_Class():
     def html_decode(self, encoded_text: str):
         decoded = html.unescape(encoded_text)
         return decoded        
+    
+    
+
+
+class Encrypt_Class:
+    def AES_encrypt(self,input:str,password:str):
+        
+        data = input.encode()
+        hash = Hashs_Class().sha256(password)
+        key = bytes.fromhex(hash)
+        iv = get_random_bytes(16) 
+        cipher = AES.new(key, AES.MODE_CBC, iv) 
+        ciphertext = cipher.encrypt(pad(data, AES.block_size)) 
+        combined = iv + ciphertext
+        return combined.hex()
+
+class Decrypt_Class:
+    def AES_decrypt(self, ciphertext:str,password:str):
+        combined = bytes.fromhex(ciphertext)
+        iv = combined[:16] 
+        ciphertext_bytes = combined[16:] 
+        hash = Hashs_Class().sha256(password)
+        key = bytes.fromhex(hash)
+        try:
+            decipher = AES.new(key, AES.MODE_CBC, iv) 
+            plaintext = unpad(decipher.decrypt(ciphertext_bytes), AES.block_size) 
+            return plaintext.decode()
+        except:
+            return typer.secho("Faild...",fg="red")
+
+    
